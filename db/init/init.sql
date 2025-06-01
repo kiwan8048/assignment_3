@@ -1,0 +1,16 @@
+USE exampledb;
+CREATE TABLE register (
+    id INT NOT NULL,
+    password VARCHAR(50) NOT NULL,
+      PRIMARY KEY(id)
+);
+
+CREATE TABLE list (
+    num  INT NOT NULL AUTO_INCREMENT,
+    title INT NOT NULL,
+    content VARCHAR(1000) NOT NULL,
+    write_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    edit_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY(num)
+);
+
