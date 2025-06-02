@@ -13,6 +13,5 @@
     <a href="index.php">로그아웃</a>
     <br>
     <h3>&nbsp;로그인 상태</h3>
-    
 </body>
 </html>

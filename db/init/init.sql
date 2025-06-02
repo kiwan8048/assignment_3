@@ -1,6 +1,6 @@
 USE exampledb;
 CREATE TABLE register (
-    id INT NOT NULL,
+    id VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
       PRIMARY KEY(id)
 );
