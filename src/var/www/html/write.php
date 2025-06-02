@@ -1,3 +1,16 @@
+<?php 
+$conn = new mysqli("db", "exampleuser", "examplepass", "exampledb");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$title = mysqli_real_escape_string($conn, $_POST['Title']);
+$content = mysqli_real_escape_string($conn, $_POST['Content']);
+$sql = "INSERT INTO list (title, content) VALUES ('$title', '$content');";
+mysqli_query($conn, $sql);
+    header("Location: list.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +26,9 @@
     <a href="index.php">로그아웃</a>
     <br>
     <br>
-    <form method="post" action="list.php" id="write-form">
+    <form method="post" action="write.php">
         <input type="text" name="Title" placeholder="제목">
-        <input type="password" name="Content" placeholder="본문">
+        <input type="text" name="Content" placeholder="본문">
         <button name="button">제출</button>
 </body>
 </html>
