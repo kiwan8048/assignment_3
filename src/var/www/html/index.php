@@ -7,6 +7,11 @@
     $sql = "SELECT password FROM register WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
+    if($row == NULL)
+    {
+      header("Location: index.php");
+      exit;
+    } 
     $db_pw = $row['password'];
     if($db_pw == $pw)
     {
@@ -20,7 +25,7 @@
       exit;
     }
   }
-    ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>

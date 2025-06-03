@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("Location: index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +17,7 @@
     <a href="home.php">홈</a>
     <a href="write.php">글 작성</a>
     <a href="list.php">목록</a>
-    <a href="index.php">로그아웃</a>
+    <a href="logout.php">로그아웃</a>
     <br>
     <h3>&nbsp;로그인 상태</h3>
 </body>

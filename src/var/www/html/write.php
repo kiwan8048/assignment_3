@@ -1,6 +1,5 @@
 <?php 
 $conn = new mysqli("db", "exampleuser", "examplepass", "exampledb");
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $title = mysqli_real_escape_string($conn, $_POST['Title']);
 $content = mysqli_real_escape_string($conn, $_POST['Content']);

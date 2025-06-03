@@ -1,6 +1,7 @@
 <?php
 $conn = new mysqli("db", "exampleuser", "examplepass", "exampledb");
-$sql = "SELECT title, num FROM list";
+$num = $_GET['num'];
+$sql = "SELECT title, content FROM list WHERE num=$num";
 $print = mysqli_query($conn, $sql); 
 ?>
 
@@ -21,5 +22,13 @@ $print = mysqli_query($conn, $sql);
     <a href="delete.php">삭제</a>
     <br>
     <br>
+    <?php
+    while ($row = mysqli_fetch_assoc($print)) {
+      $title = $row['title'];
+      $content = $row['content'];
+      echo $title.'&nbsp;';
+      echo $content.'&nbsp;';
+    }
+    ?>
 </body>
 </html>
