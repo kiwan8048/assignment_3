@@ -18,8 +18,8 @@ $print = mysqli_query($conn, $sql);
     <a href="write.php">글 작성</a>
     <a href="list.php">목록</a>
     <a href="index.php">로그아웃</a>
-    <a href="edit.php">수정</a>
-    <a href="delete.php">삭제</a>
+    <a href="edit.php?num=<?= $num ?>">수정</a>
+    <a href="delete.php?num=<?= $num ?>">삭제</a>
     <br>
     <br>
     <?php
